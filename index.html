@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,65 +23,60 @@
         body { background: var(--bg-dark); color: var(--text-main); font-family: 'Poppins', sans-serif; line-height: 1.6; scroll-behavior: smooth; }
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
         code { font-family: 'Fira Code', monospace; color: var(--accent); }
-/* Navigation */
-nav { 
-    background: rgba(2, 6, 23, 0.95); 
-    backdrop-filter: blur(10px); 
-    padding: 10px 0; /* تقليل الـ padding شوية عشان اللوجو */
-    position: fixed; 
-    width: 100%; 
-    top: 0; 
-    z-index: 1000; 
-    border-bottom: 1px solid var(--border); 
-}
 
-.nav-content { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-}
+        /* Navigation */
+        nav { 
+            background: rgba(2, 6, 23, 0.95); 
+            backdrop-filter: blur(10px); 
+            padding: 10px 0;
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid var(--border); 
+        }
 
-.logo { 
-    display: flex; /* عشان اللوجو والكلام يجوا جنب بعض */
-    align-items: center; 
-    gap: 10px; /* مسافة بين الصورة والكلمة */
-    font-size: 1.5rem; 
-    font-weight: 700; 
-    color: var(--primary); 
-    letter-spacing: 1px; 
-}
+        .nav-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
 
-/* تنسيق صورة اللوجو */
-.nav-logo-img {
-    height: 55px; /* مقاس مناسب للنافبار */
-    width: auto;
-    object-fit: contain;
-}
+        .logo { 
+            display: flex;
+            align-items: center; 
+            gap: 10px;
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            color: var(--primary); 
+            letter-spacing: 1px; 
+        }
 
-.nav-links { 
-    display: flex; 
-    list-style: none; 
-    gap: 20px; 
-}
+        .nav-links { 
+            display: flex; 
+            list-style: none; 
+            gap: 20px; 
+        }
 
-.nav-links a { 
-    color: var(--text-main); 
-    text-decoration: none; 
-    font-size: 0.85rem; 
-    font-weight: 500; 
-    transition: 0.3s; 
-}
+        .nav-links a { 
+            color: var(--text-main); 
+            text-decoration: none; 
+            font-size: 0.85rem; 
+            font-weight: 500; 
+            transition: 0.3s; 
+        }
 
-.nav-links a:hover { 
-    color: var(--primary); 
-}
-/* Hero Section Styling */
+        .nav-links a:hover { 
+            color: var(--primary); 
+        }
+
+        /* Hero Section */
         #cover { 
             min-height: 100vh; 
             display: flex; 
             align-items: center; 
             background: radial-gradient(circle at center, #1e293b 0%, #020617 100%); 
-            padding-top: 100px; /* حل مشكلة اللزق في النافجيشن */
+            padding-top: 100px;
         }
 
         .hero-wrapper { 
@@ -93,14 +89,13 @@ nav {
 
         .hero-content { 
             flex: 1; 
-            text-align: left; /* الكلام جهة اليسار ليعطي مساحة للصورة */
+            text-align: left;
         }
 
         .hero-h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; }
         .hero-p { font-size: 1.1rem; color: var(--primary); font-family: 'Fira Code', monospace; margin-top: 20px; }
         .hero-tags { margin-top: 15px; font-size: 0.9rem; color: var(--text-dim); }
 
-        /* تنسيق الأزرار بجانب بعضها */
         .hero-btns { 
             margin-top: 30px; 
             display: flex; 
@@ -108,9 +103,10 @@ nav {
         }
 
         .btn-main { background: var(--primary); color: #000; padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: 0.3s; }
+        .btn-main:hover { background: #00b8d9; transform: translateY(-2px); }
         .btn-outline { border: 1px solid var(--primary); color: var(--primary); padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 4px; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .btn-outline:hover { background: rgba(0,212,255,0.08); transform: translateY(-2px); }
 
-        /* تنسيق الصورة الشخصية (نصف المساحة) */
         .hero-image { 
             flex: 1; 
             display: flex; 
@@ -119,219 +115,452 @@ nav {
 
         .hero-image img { 
             width: 100%; 
-            max-width: 450px; /* تكبير مقاس الصورة */
+            max-width: 450px;
             height: auto; 
-            border-radius: 15px; /* زوايا منحنية بسيطة */
+            border-radius: 15px;
             border: 3px solid var(--primary); 
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
         }
 
-        /* لضمان التنسيق على الموبايل */
         @media (max-width: 992px) {
-            .hero-wrapper { 
-                flex-direction: column; 
-                text-align: center; 
-            }
+            .hero-wrapper { flex-direction: column; text-align: center; }
             .hero-content { text-align: center; }
             .hero-btns { justify-content: center; }
             .hero-image img { max-width: 300px; }
         }
 
+        /* Section Styling */
+        section { 
+            padding: 100px 0; 
+            border-bottom: 1px solid var(--border); 
+        }
 
+        .section-header { 
+            margin-bottom: 50px; 
+            text-align: center;
+        }
 
-     
+        .section-header h2 { 
+            font-size: 2.2rem; 
+            color: var(--primary); 
+            position: relative; 
+            display: inline-block; 
+        }
 
-/* Section Styling */
-section { 
-    padding: 100px 0; 
-    border-bottom: 1px solid var(--border); 
-}
+        .section-header h2::after { 
+            content: ''; 
+            position: absolute; 
+            width: 60%; 
+            height: 4px; 
+            background: var(--accent); 
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-.section-header { 
-    margin-bottom: 50px; 
-    text-align: center; /* سنترة العنوان */
-}
+        /* About */
+        .about-text-content p {
+            font-size: 1rem;
+            color: var(--text-dim);
+            margin-bottom: 18px;
+            line-height: 1.9;
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .about-text-content p strong { color: var(--primary); }
 
-.section-header h2 { 
-    font-size: 2.2rem; 
-    color: var(--primary); 
-    position: relative; 
-    display: inline-block; 
-}
+        /* Education */
+        .education-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--border);
+        }
 
-/* تعديل الخط اللي تحت العنوان ليكون في النص */
-.section-header h2::after { 
-    content: ''; 
-    position: absolute; 
-    width: 60%; 
-    height: 4px; 
-    background: var(--accent); 
-    bottom: -15px; /* نزلت الخط شوية لشكل أفضل */
-    left: 50%; /* تحريك البداية لنص العنوان */
-    transform: translateX(-50%); /* إزاحة الخط لليسار بمقدار نصف طوله ليتوسط تماماً */
-}
+        .edu-card {
+            position: relative;
+            margin-bottom: 40px;
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: left;
+            transition: 0.3s;
+        }
 
+        .edu-card:hover {
+            border-color: var(--primary);
+            transform: translateX(10px);
+        }
 
+        .edu-dot {
+            position: absolute;
+            left: -37px;
+            top: 30px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+        }
 
-       /* Grid System */
-.grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* تكبير العرض قليلاً ليناسب الكلام */
-    gap: 30px; 
-}
+        .edu-date {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
 
-.card { 
-    background: var(--bg-card); 
-    padding: 35px; 
-    border-radius: 8px; 
-    border: 1px solid var(--border); 
-    transition: 0.3s ease; 
-}
+        .edu-info h3 { color: var(--text-main); font-size: 1.3rem; margin-bottom: 5px; }
+        .edu-info h4 { color: var(--primary); font-size: 1rem; margin-bottom: 15px; }
+        .edu-info p { font-size: 0.9rem; color: var(--text-dim); }
 
-.card:hover { 
-    transform: translateY(-10px); 
-    border-color: var(--primary); 
-    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.1); 
-}
+        /* Experience / Timeline */
+        .exp-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--border);
+        }
 
-.card h4 { 
-    color: var(--primary); /* تغيير اللون للـ Primary ليبرز كعنوان للمهارات */
-    font-size: 1.1rem; 
-    margin-bottom: 20px; 
-    text-transform: uppercase; 
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 10px;
-}
+        .exp-card {
+            position: relative;
+            margin-bottom: 40px;
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: left;
+            transition: 0.3s;
+        }
 
-/* Skills Lists - تنظيم المهارات في عامودين */
-.skill-list { 
-    list-style: none; 
-    font-size: 0.85rem; 
-    columns: 2; 
-    -webkit-columns: 2; 
-    -moz-columns: 2; 
-    column-gap: 20px;
-}
+        .exp-card:hover {
+            border-color: var(--primary);
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.08);
+        }
 
-.skill-list li { 
-    margin-bottom: 10px; 
-    position: relative; 
-    padding-left: 20px; 
-    break-inside: avoid; /* منع انقسام السطر بين العامودين */
-}
+        .exp-dot {
+            position: absolute;
+            left: -37px;
+            top: 28px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent);
+        }
 
-.skill-list li::before { 
-    content: '▹'; 
-    position: absolute; 
-    left: 0; 
-    color: var(--accent); 
-    font-weight: bold;
-}
+        .exp-date {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
 
-/* للموبايل: العودة لنظام العامود الواحد لسهولة القراءة */
-@media (max-width: 768px) {
-    .skill-list { columns: 1; }
-}
+        .exp-card h3 { color: var(--text-main); font-size: 1.2rem; margin-bottom: 4px; }
+        .exp-card h4 { color: var(--primary); font-size: 0.95rem; margin-bottom: 12px; font-weight: 400; }
+        .exp-card p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.75; }
 
-       /* Projects Grid - تحسين التوزيع */
-#projects .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-}
+        /* Grid System */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px; 
+        }
 
-#projects .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* يخلي التاجز دايماً تحت في نفس المستوى */
-    height: 100%;
-}
+        .card { 
+            background: var(--bg-card); 
+            padding: 35px; 
+            border-radius: 8px; 
+            border: 1px solid var(--border); 
+            transition: 0.3s ease; 
+        }
 
-#projects .card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
-}
+        .card:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--primary); 
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.1); 
+        }
 
-#projects .card p {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    flex-grow: 1; /* عشان الوصف ياخد مساحته والتاجز تفضل تحت */
-}
+        .card h4 { 
+            color: var(--primary);
+            font-size: 1.1rem; 
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
 
-/* التاجز */
-.tag-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: auto;
-}
+        /* Skills Lists - kept for project cards only */
+        .skill-list { 
+            list-style: none; 
+            font-size: 0.85rem; 
+            columns: 1;
+            column-gap: 20px;
+        }
+        .skill-list li { 
+            margin-bottom: 10px; 
+            position: relative; 
+            padding-left: 20px; 
+            break-inside: avoid;
+        }
+        .skill-list li::before { 
+            content: '▹'; 
+            position: absolute; 
+            left: 0; 
+            color: var(--accent); 
+            font-weight: bold;
+        }
 
-.tag {
-    background: rgba(0, 212, 255, 0.05);
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    padding: 3px 10px;
-    font-size: 0.7rem;
-    border-radius: 4px;
-    color: var(--primary);
-}
+        /* ── SKILLS CREATIVE ── */
+        .skills-tabs {
+            display: flex;
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+        .skill-tab {
+            flex: 1;
+            min-width: 120px;
+            padding: 14px 8px;
+            background: var(--bg-card);
+            border: none;
+            border-right: 1px solid var(--border);
+            color: var(--text-dim);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.5px;
+        }
+        .skill-tab:last-child { border-right: none; }
+        .skill-tab .tab-icon { font-size: 1.3rem; }
+        .skill-tab:hover { background: rgba(0,212,255,0.05); color: var(--primary); }
+        .skill-tab.active {
+            background: rgba(0,212,255,0.09);
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
 
-.cert-grid-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
+        .skills-panel {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 32px;
+            animation: fadeIn 0.3s ease;
+        }
+        .skills-panel.active { display: block; }
+        @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
 
-.cert-category {
-    background: var(--bg-card);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    text-align: left; /* الحفاظ على محاذاة الروابط لليسار داخل البطاقة */
-}
+        .skills-panel-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 22px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        .skills-panel-header h3 { font-size: 1rem; color: var(--primary); }
+        .skills-panel-header .count {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            background: rgba(0,212,255,0.07);
+            border: 1px solid var(--border);
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
 
-.cert-category h3 {
-    color: var(--primary);
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 10px;
-    text-align: center; /* سنترة عنوان الفئة */
-}
+        .skill-pills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 9px;
+        }
+        .skill-pill {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 13px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.02);
+            transition: all 0.25s;
+        }
+        .skill-pill:hover {
+            border-color: var(--primary);
+            background: rgba(0,212,255,0.06);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,212,255,0.1);
+        }
+        .skill-pill-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+        .skill-pill span { font-size: 0.8rem; color: var(--text-dim); transition: color 0.25s; }
+        .skill-pill:hover span { color: var(--text-main); }
 
-.cert-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        @media (max-width: 768px) {
+            .skill-tab { min-width: 80px; font-size: 0.62rem; }
+            .skill-pills-grid { grid-template-columns: 1fr 1fr; }
+        }
 
-.cert-link-item {
-    color: var(--text-dim);
-    text-decoration: none;
-    font-size: 0.85rem;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
+        /* Projects Grid */
+        #projects .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
 
-.cert-link-item:hover {
-    color: var(--accent);
-    background: rgba(0, 255, 157, 0.05);
-    border-color: var(--accent);
-    padding-left: 15px;
-}
+        #projects .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
 
-.cert-link-item::before {
-    content: "📜";
-    margin-right: 10px;
-}
-        footer { background: #010409; padding: 60px 0; text-align: center; }
-        .contact-grid { margin-bottom: 30px; font-family: 'Fira Code', monospace; }
+        #projects .card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+
+        #projects .card p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            color: var(--text-dim);
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-size: 0.72rem;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* Tags */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: auto;
+        }
+
+        .tag {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 3px 10px;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            color: var(--primary);
+        }
+
+        /* Certifications */
+        .cert-group { margin-bottom: 60px; }
+        .cert-group h3 { 
+            color: var(--primary); 
+            margin-bottom: 30px; 
+            border-left: 4px solid var(--accent); 
+            padding-left: 15px;
+            font-size: 1.2rem;
+        }
+
+        .cert-image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cert-image-card {
+            background: #0f172a;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .cert-image-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.1);
+        }
+
+        .cert-image-card.hidden { display: none; }
+
+        .cert-img-container { 
+            background: #fff; 
+            padding: 15px; 
+            height: 150px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .cert-img-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        /* placeholder icon when no image */
+        .cert-img-placeholder {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+        }
+
+        .cert-body { padding: 15px; text-align: left; }
+        .cert-body h3 { font-size: 0.92rem; color: var(--text-main); margin-bottom: 6px; font-weight: 500; }
+        .cert-body .cert-date { font-family: 'Fira Code', monospace; font-size: 0.75rem; color: var(--text-dim); }
+        .view-cert { color: var(--primary); text-decoration: none; font-size: 0.78rem; font-weight: bold; display: inline-block; margin-top: 6px; }
+        .view-cert:hover { color: var(--accent); }
+
+        .show-more-btn {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+        }
+        .show-more-btn:hover { background: var(--primary); color: #000; }
+
+        /* Footer / Contact */
+        footer { 
+            background: #010409; 
+            padding: 60px 0; 
+            text-align: center; 
+        }
+        .contact-grid { 
+            margin-bottom: 30px; 
+            font-family: 'Fira Code', monospace; 
+            line-height: 2.2;
+        }
+        .contact-grid a { color: var(--primary); text-decoration: none; }
+        .contact-grid a:hover { color: var(--accent); }
         .socials a { font-size: 1.8rem; color: var(--text-main); margin: 0 15px; transition: 0.3s; }
-        .socials a:hover { color: var(--primary); }
+        .socials a:hover { color: var(--primary); transform: translateY(-4px); display: inline-block; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -341,167 +570,308 @@ section {
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
     <div class="container nav-content">
         <div class="logo">
-            <!-- <img src="https://i.ibb.co/XkYCWmD4/Gemini-Generated-Image-951qk5951qk5951q-removebg-preview.png" alt="Khlood" border="0">             -->
             <span>Khlood Osama</span>
         </div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#certs">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </nav>
 
+<!-- HERO -->
 <header id="cover">
-        <div class="container hero-wrapper">
-            <div class="hero-content">
-                <h1 class="hero-h1">Khlood Osama</h1>
-                <p class="hero-p">IT student building secure, scalable systems — Networking, IoT & Mobile</p>
-                <p class="hero-tags">Networking & Security | IoT & Embedded | Flutter Mobile | Smart Automation</p>
-                
-                <div class="hero-btns">
-                    <a href="#projects" class="btn-main">View Projects</a>
-                    <a href="Khlood_Osama_CV.pdf" download class="btn-outline">
-                        <i class="fas fa-download"></i> Download CV
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-image">
-                <img src="https://i.ibb.co/wh5z9DvC/Me.jpg" alt="Khlood Osama">
+    <div class="container hero-wrapper">
+        <div class="hero-content">
+            <h1 class="hero-h1">Khlood Osama</h1>
+            <p class="hero-p">IT student building secure, scalable systems — Networking, IoT &amp; Mobile</p>
+            <p class="hero-tags">Networking &amp; Security | IoT &amp; Embedded | Flutter Mobile | Smart Automation</p>
+            
+            <div class="hero-btns">
+                <a href="#projects" class="btn-main">View Projects</a>
+                <a href="Khlood_Osama_CV.pdf" download class="btn-outline">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
             </div>
         </div>
-    </header>
 
+        <div class="hero-image">
+            <img src="https://i.ibb.co/wh5z9DvC/Me.jpg" alt="Khlood Osama"
+                 onerror="this.style.display='none'">
+        </div>
+    </div>
+</header>
+
+<!-- ABOUT -->
 <section id="about">
-    <div class="container about-wrapper">
+    <div class="container">
         <div class="section-header">
             <h2>About Me</h2>
         </div>
-
         <div class="about-text-content">
             <p>
-                I’m Khlood Osama — an IT student who loves turning ideas into real, working systems. 
+                I'm <strong>Khlood Osama</strong> — an IT student who loves turning ideas into real, working systems. 
                 What excites me most is not just writing code, but building complete solutions — from designing secure network infrastructures 
                 to integrating sensors, microcontrollers, and mobile applications into smart systems that actually solve problems.
             </p>
-
             <p>
-                I enjoy working at the intersection of Networking & Security, IoT & Embedded Systems, 
+                I enjoy working at the intersection of <strong>Networking &amp; Security</strong>, <strong>IoT &amp; Embedded Systems</strong>, 
                 Mobile Applications (Flutter), and Smart Automation Solutions. 
-                I’ve designed enterprise-level network topologies using VLANs, OSPF, ACLs, NAT, and high-availability protocols. 
-                At the same time, I’ve built smart systems using ESP8266/ESP32, integrating gas sensors, lighting automation, 
-                and real-time monitoring through mobile apps
-
-            <p>
-                One of my proudest achievements was developing a commercial-ready Smart Home System, 
-                which ranked 4th at the 2nd International Conference on Technological Education (SCTE2025). 
-                That project wasn’t just a prototype — it was built with scalability, safety, and user experience in mind.
+                I've designed enterprise-level network topologies using VLANs, OSPF, ACLs, NAT, and high-availability protocols. 
+                At the same time, I've built smart systems using ESP8266/ESP32, integrating gas sensors, lighting automation, 
+                and real-time monitoring through mobile apps.
             </p>
-
+            <p>
+                One of my proudest achievements was developing a <strong>commercial-ready Smart Home System</strong>, 
+                which ranked <strong>4th at the 2nd International Conference on Technological Education (SCTE2025)</strong>. 
+                That project wasn't just a prototype — it was built with scalability, safety, and user experience in mind.
+            </p>
+            <p>
+                Currently a <strong>Vulnerability Analyst &amp; Penetration Tester</strong> at the 
+                <strong>Digital Egypt Pioneers Initiative (DEPI)</strong>, conducting security tests aligned with Mastercard's framework.
+            </p>
         </div>
     </div>
 </section>
 
+<!-- EDUCATION -->
+<section id="education">
+    <div class="container">
+        <div class="section-header">
+            <h2>Education</h2>
+        </div>
+        <div class="education-wrapper">
+            <div class="edu-card">
+                <div class="edu-dot"></div>
+                <div class="edu-date">Oct 2022 – Present</div>
+                <div class="edu-info">
+                    <h3>Bachelor of Information Technology</h3>
+                    <h4>Egyptian-German College of Technology – Assiut International Technological University</h4>
+                    <p>Specializing in Networking, IoT, Cybersecurity, and Software Development.</p>
+                </div>
+            </div>
+            <div class="edu-card">
+                <div class="edu-dot"></div>
+                <div class="edu-date">Sep 2019 – May 2022</div>
+                <div class="edu-info">
+                    <h3>Technical Diploma in Technology</h3>
+                    <h4>Technological Secondary School in Assiut</h4>
+                    <p>Graduation Project: <strong>Online Exam System</strong> — received <strong>Excellent grade</strong>. Built with PHP, MySQL, HTML/CSS/JS.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-   <section id="skills">
+<!-- SKILLS -->
+<section id="skills">
     <div class="container">
         <div class="section-header">
             <h2>Technical Skills</h2>
         </div>
-        <div class="grid">
-            <div class="card">
-                <h4>Networking & Infrastructure</h4>
-                <ul class="skill-list">
-                    <li>LAN / WAN Design</li><li>VLAN & Inter-VLAN</li><li>Subnetting</li><li>OSPF (Dynamic)</li>
-                    <li>Static Routing</li><li>ACL</li><li>NAT</li><li>DHCP / DNS Basics</li>
-                    <li>HSRP (High Availability)</li><li>STP / VTP</li><li>Port Security</li><li>Syslog / SSH</li>
-                    <li>Wireless Config</li><li>Private VLAN (PVLAN)</li><li>QoS Basics</li><li>SDN Concepts</li>
-                    <li>BGP (Filtering/Redist)</li><li>TCP/IP Suite</li><li>Network Documentation</li>
-                    <li>Tools: Cisco Packet Tracer, GNS3, Windows Server, Cisco IOS</li>
-                </ul>
-            </div>
 
-            <div class="card">
-                <h4>Cybersecurity & Testing</h4>
-                <ul class="skill-list">
-                    <li>Vulnerability Analysis</li><li>Network Security Testing</li><li>Penetration Testing</li><li>SQL Injection (UNION, CAST)</li>
-                    <li>Path Traversal + Mitigation</li><li>Null Byte Attacks</li><li>Password Reset Poisoning</li><li>Bind / Reverse Shell</li>
-                    <li>HTTP Methods & REST Security</li><li>DOM-based Vulns</li><li>HttpOnly Cookies</li><li>Secure Config Practices</li>
-                    <li>Security Documentation</li>
-                </ul>
-            </div>
+        <!-- Tabs -->
+        <div class="skills-tabs">
+            <button class="skill-tab active" onclick="switchTab(this,'tab-net')">
+                <span class="tab-icon">🌐</span>Networking
+            </button>
+            <button class="skill-tab" onclick="switchTab(this,'tab-sec')">
+                <span class="tab-icon">🔐</span>Security
+            </button>
+            <button class="skill-tab" onclick="switchTab(this,'tab-iot')">
+                <span class="tab-icon">🤖</span>IoT
+            </button>
+            <button class="skill-tab" onclick="switchTab(this,'tab-dev')">
+                <span class="tab-icon">💻</span>Dev
+            </button>
+            <button class="skill-tab" onclick="switchTab(this,'tab-db')">
+                <span class="tab-icon">🗄️</span>DB &amp; Code
+            </button>
+            <button class="skill-tab" onclick="switchTab(this,'tab-tools')">
+                <span class="tab-icon">🛠️</span>Tools
+            </button>
+        </div>
 
-            <div class="card">
-                <h4>IoT & Embedded Systems</h4>
-                <ul class="skill-list">
-                    <li>ESP8266 / ESP32</li><li>Arduino</li><li>Sensor Integration</li><li>Servo Motor Control</li>
-                    <li>Potentiometer Control</li><li>7-Segment Parsing</li><li>Smart Automation Design</li><li>Real-time Monitoring</li>
-                    <li>MQTT / Firebase</li><li>Solar Integration</li><li>Hardware–Software Integration</li><li>Timer Interrupts</li>
-                    <li>Switch Scanning</li>
-                </ul>
+        <!-- Panel: Networking -->
+        <div class="skills-panel active" id="tab-net">
+            <div class="skills-panel-header">
+                <h3>Networking &amp; Infrastructure</h3>
+                <span class="count">20 skills</span>
             </div>
-
-            <div class="card">
-                <h4>Development (Mobile & Web)</h4>
-                <ul class="skill-list">
-                    <li>Flutter (Dart)</li><li>UI/UX Design</li><li>State Management</li><li>API Integration</li>
-                    <li>HTML5 / CSS3 / JavaScript</li><li>Bootstrap</li><li>MVC Architecture</li><li>EJS Templates</li>
-                    <li>CRUD Operations</li><li>REST Concepts</li><li>Responsive Design</li><li>PHP Backend</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h4>Databases & Programming</h4>
-                <ul class="skill-list">
-                    <li>MySQL / MS SQL Server</li><li>SQL (Queries, Joins, Subqueries)</li><li>ERD Design</li><li>Normalization</li>
-                    <li>C# / C++ / Java</li><li>Basic Python</li><li>OOP Concepts</li><li>Data Structures (Stack)</li>
-                    <li>Infix → Postfix</li><li>Assembler Project</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h4>Tools & Soft Skills</h4>
-                <ul class="skill-list">
-                    <li>Cloud Fundamentals</li><li>Network Virtualization</li><li>VS Code / Visual Studio</li><li>XAMPP</li>
-                    <li>MS Office (Advanced)</li><li>Technical Documentation</li><li>Project Phasing / Budgeting</li><li>Analytical Thinking</li>
-                    <li>Problem Solving</li><li>Leadership (R&D / HR)</li><li>Presentation Skills</li><li>Continuous Learning</li>
-                </ul>
+            <div class="skill-pills-grid">
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>LAN / WAN Design</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>VLAN &amp; Inter-VLAN</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Subnetting</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>OSPF (Dynamic)</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Static Routing</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>ACL</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>NAT</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>DHCP / DNS</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>HSRP High Availability</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>STP / VTP</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Port Security</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Syslog / SSH</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Wireless Config</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Private VLAN (PVLAN)</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>QoS Basics</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>SDN Concepts</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>BGP Filtering/Redistribution</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>TCP/IP Suite</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Cisco Packet Tracer</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>GNS3 / Windows Server</span></div>
             </div>
         </div>
+
+        <!-- Panel: Security -->
+        <div class="skills-panel" id="tab-sec">
+            <div class="skills-panel-header">
+                <h3>Cybersecurity &amp; Penetration Testing</h3>
+                <span class="count">14 skills</span>
+            </div>
+            <div class="skill-pills-grid">
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Vulnerability Analysis</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Penetration Testing</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Network Security Testing</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>SQL Injection (UNION, CAST)</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Path Traversal + Mitigation</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Null Byte Attacks</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Password Reset Poisoning</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Bind / Reverse Shell</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>HTTP Methods &amp; REST Security</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>DOM-based Vulnerabilities</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>HttpOnly Cookies</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Secure Config Practices</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Ethical Hacking</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Security Documentation</span></div>
+            </div>
+        </div>
+
+        <!-- Panel: IoT -->
+        <div class="skills-panel" id="tab-iot">
+            <div class="skills-panel-header">
+                <h3>IoT &amp; Embedded Systems</h3>
+                <span class="count">13 skills</span>
+            </div>
+            <div class="skill-pills-grid">
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>ESP8266 / ESP32</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Arduino</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Sensor Integration</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Servo Motor Control</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Potentiometer Control</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>7-Segment Parsing</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Smart Automation Design</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Real-time Monitoring</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>MQTT / Firebase</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Solar Integration</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Hardware–Software Integration</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Timer Interrupts</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Switch Scanning</span></div>
+            </div>
+        </div>
+
+        <!-- Panel: Dev -->
+        <div class="skills-panel" id="tab-dev">
+            <div class="skills-panel-header">
+                <h3>Mobile &amp; Web Development</h3>
+                <span class="count">13 skills</span>
+            </div>
+            <div class="skill-pills-grid">
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Flutter (Dart)</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>UI/UX Design</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>State Management</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>API Integration</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>HTML5 / CSS3 / JavaScript</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Bootstrap</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>MVC Architecture</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>EJS Templates</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>CRUD Operations</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>REST Concepts</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Responsive Design</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>PHP Backend</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>WordPress Design</span></div>
+            </div>
+        </div>
+
+        <!-- Panel: DB & Code -->
+        <div class="skills-panel" id="tab-db">
+            <div class="skills-panel-header">
+                <h3>Databases &amp; Programming Languages</h3>
+                <span class="count">10 skills</span>
+            </div>
+            <div class="skill-pills-grid">
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>MySQL / MS SQL Server</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>SQL (Queries, Joins, Subqueries)</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>ERD Design</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Normalization</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>C# / C++ / Java</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Python (Basics)</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>OOP Concepts</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Data Structures (Stack)</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Infix → Postfix</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Assembler Design</span></div>
+            </div>
+        </div>
+
+        <!-- Panel: Tools -->
+        <div class="skills-panel" id="tab-tools">
+            <div class="skills-panel-header">
+                <h3>Tools &amp; Professional Skills</h3>
+                <span class="count">12 skills</span>
+            </div>
+            <div class="skill-pills-grid">
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Cloud Fundamentals</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Network Virtualization</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>VS Code / Visual Studio</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>XAMPP</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>MS Office (Advanced)</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Technical Documentation</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Project Phasing / Budgeting</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Analytical Thinking</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Problem Solving</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Leadership (R&amp;D / HR)</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Presentation Skills</span></div>
+                <div class="skill-pill"><div class="skill-pill-dot"></div><span>Continuous Learning</span></div>
+            </div>
+        </div>
+
     </div>
 </section>
 
-
+<!-- PROJECTS -->
 <section id="projects">
     <div class="container">
         <div class="section-header"><h2>Major Projects</h2></div>
         <div class="grid">
-            
+
             <div class="card">
-                <span class="badge">SCTE2025 - 4th Place</span>
+                <span class="badge">🏆 SCTE2025 – 4th Place · Cairo</span>
                 <h3>Smart Home System</h3>
                 <p>Commercial-ready IoT system featuring gas leak detection with auto-shutoff, smart garage, solar integration, and Google Assistant voice control.</p>
                 <ul class="skill-list" style="columns: 1; font-size: 0.8rem; margin-bottom: 15px;">
-                    <li>Real-time monitoring via Flutter</li>
-                    <li>Emergency alert system</li>
+                    <li>Real-time monitoring &amp; alerts via Flutter app</li>
+                    <li>Emergency auto-shutoff valve system</li>
+                    <li>Solar energy + smart lighting scheduling</li>
                 </ul>
                 <div class="tag-container">
-                    <span class="tag">ESP8266/ESP32</span><span class="tag">Flutter</span><span class="tag">Firebase/MQTT</span>
+                    <span class="tag">ESP8266/ESP32</span><span class="tag">Flutter</span><span class="tag">Firebase/MQTT</span><span class="tag">Google Assistant</span>
                 </div>
             </div>
 
             <div class="card">
                 <h3>Hospital Enterprise Network</h3>
-                <p>Full infrastructure design for a modern hospital including 81 PCs, Cisco ISR 4321 Router, and 13 Switches (2960 & 3560).</p>
+                <p>Full infrastructure design for a modern hospital including 81 PCs, Cisco ISR 4321 Router, and 13 Switches (2960 &amp; 3560).</p>
                 <ul class="skill-list" style="columns: 1; font-size: 0.8rem; margin-bottom: 15px;">
                     <li>HSRP High Availability</li>
-                    <li>VoIP & HL7/DICOM Integration</li>
+                    <li>VoIP &amp; HL7/DICOM Integration</li>
                 </ul>
                 <div class="tag-container">
                     <span class="tag">OSPF</span><span class="tag">VLAN</span><span class="tag">Port-Security</span><span class="tag">ACL/NAT</span>
@@ -510,13 +880,22 @@ section {
 
             <div class="card">
                 <h3>Enterprise Network Simulations</h3>
-                <p>Academic & freelance projects featuring BGP filtering, Private VLANs, QoS, and secure management via Syslog & SSH.</p>
+                <p>Academic &amp; freelance projects featuring BGP filtering, Private VLANs, QoS, and secure management via Syslog &amp; SSH.</p>
                 <div class="tag-container">
-                    <span class="tag">BGP</span><span class="tag">VTP</span><span class="tag">PVLAN</span><span class="tag">Inter-VLAN</span>
+                    <span class="tag">BGP</span><span class="tag">VTP</span><span class="tag">PVLAN</span><span class="tag">Inter-VLAN</span><span class="tag">QoS</span>
                 </div>
             </div>
 
             <div class="card">
+                <h3>Student Management System</h3>
+                <p>Full-stack web system for ITEC with admin and student portals, grade reports, PDF export, and schedule management.</p>
+                <div class="tag-container">
+                    <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span><span class="tag">DomPDF</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="badge">⭐ Excellent Grade</span>
                 <h3>Online Examination System</h3>
                 <p>Full-stack graduation project with randomized question banks, instant results, and automated grading engine.</p>
                 <div class="tag-container">
@@ -534,7 +913,7 @@ section {
 
             <div class="card">
                 <h3>Security Practical Work (DEPI)</h3>
-                <p>Vulnerability analysis and penetration testing workflows. Test case implementation aligned with enterprise frameworks.</p>
+                <p>Vulnerability analysis and penetration testing workflows. Test case implementation aligned with Mastercard's enterprise security framework.</p>
                 <div class="tag-container">
                     <span class="tag">Pen-Testing</span><span class="tag">Security Reporting</span><span class="tag">Vuln-Analysis</span>
                 </div>
@@ -560,90 +939,301 @@ section {
     </div>
 </section>
 
-
-<section id="certs">
+<!-- EXPERIENCE -->
+<section id="experience">
     <div class="container">
         <div class="section-header">
-            <h2>Certifications</h2>
+            <h2>Experience</h2>
         </div>
-        
-        <div class="cert-grid-main">
-            <div class="cert-category">
-                <h3><i class="fas fa-network-wired"></i> Cisco Networking Academy</h3>
-                <div class="cert-links">
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">CCNA: Enterprise Networking, Security, and Automation </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">CCNA: Switching, Routing, and Wireless Essentials </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">CCNA: Introduction to Networks </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Ethical Hacker </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Introduction to Cybersecurity </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Cybersecurity Essentials </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Networking Essentials </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Introduction to IoT and Digital Transformation </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Introduction to Data Science </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">English for IT 1 & 2 [cite: 1, 2]</a>
-                </div>
+        <div class="exp-wrapper">
+
+            <div class="exp-card">
+                <div class="exp-dot"></div>
+                <div class="exp-date">Nov 2025 – Present</div>
+                <h3>Vulnerability Analyst &amp; Penetration Tester</h3>
+                <h4>Digital Egypt Pioneers Initiative (DEPI) · Remote</h4>
+                <p>Selected for the competitive DEPI Cybersecurity track. Conducting network security tests aligned with Mastercard's security framework, identifying vulnerabilities in applications, and collaborating with globally distributed security teams across multiple time zones.</p>
             </div>
 
-            <div class="cert-category">
-                <h3><i class="fas fa-laptop-code"></i> ITI & MaharaTech</h3>
-                <div class="cert-links">
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Computer Networks (120 hrs) </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">MVC Framework (30 hrs) </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">C# Programming (15 hrs) </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Agile Fundamentals (12 hrs) </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Diploma in Web Development </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Red Hat System Administration I </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Ethical Hacking (MaharaTech) </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Cybersecurity for Beginners </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Building Web Applications (PHP & MySQL) </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Mobile Applications for Android (Java) </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Network Virtualization Concepts </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Cloud and Virtualization Concepts </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Python Basics / JS / HTML & CSS </a>
-                </div>
+            <div class="exp-card">
+                <div class="exp-dot"></div>
+                <div class="exp-date">Dec 2024 – Present</div>
+                <h3>HR Manager</h3>
+                <h4>AITU DEV · Assiut, Egypt (Remote)</h4>
+                <p>Managing human resources for a tech development organization while maintaining active involvement in technical projects and development work.</p>
             </div>
 
-            <div class="cert-category">
-                <h3><i class="fas fa-trophy"></i> Achievements & Career</h3>
-                <div class="cert-links">
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">4th Place - Smart Home Project (SCTE2025) </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">AHK Egypt: IT Technician German Dual Training </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Optical Fiber Systems (Telecom Egypt) </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Practicing Software Leaders of Africa Competition </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">R&D Team - Assiut Tech University </a>
-                    <a href="YOUR_DRIVE_LINK" target="_blank" class="cert-link-item">Freelancing Basics (Mostaql, Upwork, Khamsat) </a>
-                </div>
+            <div class="exp-card">
+                <div class="exp-dot"></div>
+                <div class="exp-date">Jan 2025 – Apr 2025</div>
+                <h3>Smart Home R&amp;D Engineer</h3>
+                <h4>R&amp;D Team · Egyptian-German College of Technology</h4>
+                <p>Designed and developed the complete Smart Home System from sensor hardware integration to Flutter mobile app. Achieved 4th place at SCTE2025 International Conference at Royal Maxim Palace Kempinski, Cairo.</p>
             </div>
+
+            <div class="exp-card">
+                <div class="exp-dot"></div>
+                <div class="exp-date">Feb 2023 – Present</div>
+                <h3>Frontend Developer</h3>
+                <h4>Freelance</h4>
+                <p>Building responsive web interfaces for clients using HTML5, CSS3, JavaScript and Bootstrap. Participating in Software Leaders of Africa Competitions.</p>
+            </div>
+
+            <div class="exp-card">
+                <div class="exp-dot"></div>
+                <div class="exp-date">Sep 2020 – Present</div>
+                <h3>Network Configuration Engineer</h3>
+                <h4>Freelance · Remote</h4>
+                <p>Designing enterprise-level networks using Cisco Packet Tracer and GNS3: VLANs, OSPF, BGP, NAT, ACLs, HSRP redundancy. Creating professional PDF documentation with network diagrams and command references.</p>
+            </div>
+
+            <div class="exp-card">
+                <div class="exp-dot"></div>
+                <div class="exp-date">May 2022 – Sep 2022</div>
+                <h3>Web Developer Intern</h3>
+                <h4>Information Technology Institute (ITI)</h4>
+                <p>Developed the Student Management System with full admin and student portals. Completed certifications in C#, Agile, MVC, Computer Networks (120hrs), and Web Development.</p>
+            </div>
+
+            <div class="exp-card">
+                <div class="exp-dot"></div>
+                <div class="exp-date">Oct 2022 – Present</div>
+                <h3>IT &amp; Network Assistant</h3>
+                <h4>Egyptian-German College of Technology</h4>
+                <p>Designed and implemented LAN infrastructure and secure Windows Server environments. Troubleshot connectivity issues and assisted peers with network security protocols.</p>
+            </div>
+
         </div>
     </div>
 </section>
 
-
-
-
-    <footer id="contact">
-        <div class="container">
-            <h2 style="color: var(--primary); margin-bottom: 30px;">Initialize Connection</h2>
-            <div class="contact-grid">
-                <p>> Location: Assiut, Egypt</p>
-                <p>> Email: khloodosama2003@gmail.com</p>
-                <p>> Mobile: 01124435440</p>
-            </div>
-            <div class="socials">
-                <a href="https://www.linkedin.com/in/khlood-osama"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Khl0ud"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fas fa-file-pdf"></i></a>
-            </div>
-            <p style="margin-top: 40px; font-size: 0.8rem; color: var(--text-dim);">
-                &copy; 2026 Khlood Osama | All Logs Secured.
-            </p>
+<!-- CERTIFICATIONS -->
+<section id="certs">
+    <div class="container">
+        <div class="section-header">
+            <h2>Certifications &amp; Professional Development</h2>
         </div>
-    </footer>
+
+        <!-- Cisco -->
+        <div class="cert-group">
+            <h3><i class="fas fa-network-wired"></i> Cisco Networking Academy</h3>
+            <div class="cert-image-grid" id="cisco-grid">
+                <div class="cert-image-card">
+                    <div class="cert-img-placeholder">🏅</div>
+                    <div class="cert-body">
+                        <h3>CCNA: Enterprise Networking, Security &amp; Automation</h3>
+                        <div class="cert-date">Aug 2025</div>
+                    </div>
+                </div>
+                <div class="cert-image-card">
+                    <div class="cert-img-placeholder">🏅</div>
+                    <div class="cert-body">
+                        <h3>CCNA: Switching, Routing &amp; Wireless Essentials</h3>
+                        <div class="cert-date">Jul 2025</div>
+                    </div>
+                </div>
+                <div class="cert-image-card">
+                    <div class="cert-img-placeholder">🏅</div>
+                    <div class="cert-body">
+                        <h3>CCNA: Introduction to Networks</h3>
+                        <div class="cert-date">Jul 2025</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">🔐</div>
+                    <div class="cert-body">
+                        <h3>Ethical Hacker</h3>
+                        <div class="cert-date">Mar 2025</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">🛡️</div>
+                    <div class="cert-body">
+                        <h3>Cybersecurity Essentials</h3>
+                        <div class="cert-date">Feb 2025</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">🔒</div>
+                    <div class="cert-body">
+                        <h3>Introduction to Cybersecurity</h3>
+                        <div class="cert-date">Dec 2024</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">🌐</div>
+                    <div class="cert-body">
+                        <h3>Networking Essentials</h3>
+                        <div class="cert-date">Feb 2025</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">🤖</div>
+                    <div class="cert-body">
+                        <h3>Introduction to IoT &amp; Digital Transformation</h3>
+                        <div class="cert-date">Feb 2025</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">📊</div>
+                    <div class="cert-body">
+                        <h3>Introduction to Data Science</h3>
+                        <div class="cert-date">Feb 2025</div>
+                    </div>
+                </div>
+            </div>
+            <button class="show-more-btn" onclick="toggleCerts('cisco-grid', this)">Show More</button>
+        </div>
+
+        <!-- ITI & MaharaTech -->
+        <div class="cert-group">
+            <h3><i class="fas fa-laptop-code"></i> ITI &amp; MaharaTech</h3>
+            <div class="cert-image-grid" id="iti-grid">
+                <div class="cert-image-card">
+                    <div class="cert-img-placeholder">📡</div>
+                    <div class="cert-body">
+                        <h3>Computer Networks (120 hrs)</h3>
+                        <div class="cert-date">ITI</div>
+                    </div>
+                </div>
+                <div class="cert-image-card">
+                    <div class="cert-img-placeholder">💻</div>
+                    <div class="cert-body">
+                        <h3>C# Programming (15 hrs)</h3>
+                        <div class="cert-date">ITI</div>
+                    </div>
+                </div>
+                <div class="cert-image-card">
+                    <div class="cert-img-placeholder">🌍</div>
+                    <div class="cert-body">
+                        <h3>Diploma in Web Development + MVC (30 hrs)</h3>
+                        <div class="cert-date">ITI</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">🐧</div>
+                    <div class="cert-body">
+                        <h3>Red Hat System Administration I</h3>
+                        <div class="cert-date">MaharaTech · Jun 2024</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">🔓</div>
+                    <div class="cert-body">
+                        <h3>Ethical Hacking</h3>
+                        <div class="cert-date">MaharaTech · Jun 2024</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">🛡️</div>
+                    <div class="cert-body">
+                        <h3>Cybersecurity for Beginners</h3>
+                        <div class="cert-date">MaharaTech · May 2025</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">🐍</div>
+                    <div class="cert-body">
+                        <h3>Python Basics</h3>
+                        <div class="cert-date">MaharaTech · Jun 2024</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">📱</div>
+                    <div class="cert-body">
+                        <h3>Android App Development (Java)</h3>
+                        <div class="cert-date">MaharaTech · Feb 2024</div>
+                    </div>
+                </div>
+                <div class="cert-image-card hidden">
+                    <div class="cert-img-placeholder">☁️</div>
+                    <div class="cert-body">
+                        <h3>Cloud &amp; Virtualization Concepts</h3>
+                        <div class="cert-date">MaharaTech · Jun 2024</div>
+                    </div>
+                </div>
+            </div>
+            <button class="show-more-btn" onclick="toggleCerts('iti-grid', this)">Show More</button>
+        </div>
+
+        <!-- Other -->
+        <div class="cert-group">
+            <h3><i class="fas fa-certificate"></i> Other Certifications</h3>
+            <div class="cert-image-grid">
+                <div class="cert-image-card">
+                    <div class="cert-img-placeholder">🔌</div>
+                    <div class="cert-body">
+                        <h3>Optical Fiber Systems</h3>
+                        <div class="cert-date">Telecom Egypt</div>
+                    </div>
+                </div>
+                <div class="cert-image-card">
+                    <div class="cert-img-placeholder">🇩🇪</div>
+                    <div class="cert-body">
+                        <h3>IT Technician – German Dual Training System</h3>
+                        <div class="cert-date">AHK Egypt (German-Arab Chamber)</div>
+                    </div>
+                </div>
+                <div class="cert-image-card">
+                    <div class="cert-img-placeholder">⚡</div>
+                    <div class="cert-body">
+                        <h3>Agile Fundamentals</h3>
+                        <div class="cert-date">ITI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+    <div class="container">
+        <h2 style="color: var(--primary); margin-bottom: 30px;">Initialize Connection</h2>
+        <div class="contact-grid">
+            <p>&gt; Location: Assiut, Egypt</p>
+            <p>&gt; Email: <a href="mailto:khloodosama2003@gmail.com">khloodosama2003@gmail.com</a></p>
+            <p>&gt; Mobile: <a href="tel:+201124435440">+20 112 443 5440</a></p>
+            <p>&gt; Status: <span style="color: var(--accent);">● Available for opportunities</span></p>
+        </div>
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/khlood-osama" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Khl0ud" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:khloodosama2003@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="Khlood_Osama_CV.pdf" download title="Download CV"><i class="fas fa-file-pdf"></i></a>
+        </div>
+        <p style="margin-top: 40px; font-size: 0.8rem; color: var(--text-dim);">
+            &copy; 2026 Khlood Osama | All Logs Secured.
+        </p>
+    </div>
+</footer>
+
+<script>
+    function switchTab(clickedTab, panelId) {
+        document.querySelectorAll('.skill-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.skills-panel').forEach(p => p.classList.remove('active'));
+        clickedTab.classList.add('active');
+        document.getElementById(panelId).classList.add('active');
+    }
+
+    function toggleCerts(gridId, btn) {
+        const grid = document.getElementById(gridId);
+        const allCerts = grid.querySelectorAll('.cert-image-card');
+
+        if (btn.innerText === "Show More") {
+            allCerts.forEach(cert => cert.style.display = "block");
+            btn.innerText = "Show Less";
+        } else {
+            let count = 0;
+            allCerts.forEach(cert => {
+                count++;
+                cert.style.display = count <= 3 ? "block" : "none";
+            });
+            btn.innerText = "Show More";
+        }
+    }
+</script>
 
 </body>
-
 </html>
-
-
-
-
